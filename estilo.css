@@ -1,0 +1,466 @@
+/* ==========================================================================
+   1. RESET E CONFIGURAÇÃO BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #334155;
+    padding: 20px;
+}
+
+body.veiculo-cadv, body.index-body {
+    background-color: #f8fafc;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   2. NAVEGAÇÃO E CABEÇALHO GLOBAL (header-index / nave)
+   ========================================================================== */
+.header-index, header {
+    background-color: #ffffff;
+    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nave {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.nave a {
+    color: #0f172a;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.nave a:hover {
+    background-color: #991b1b;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   3. ESTILOS DA PÁGINA INICIAL (index.php)
+   ========================================================================== */
+.container-index {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-banner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.hero-text h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #58111A;
+}
+
+.hero-text .highlight {
+    color: #B31B1B;
+}
+
+.hero-text p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #475569;
+    max-width: 700px;
+}
+
+/* Estatísticas */
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat-card h3 {
+    font-size: 2.2rem;
+    color: #B31B1B;
+    margin-bottom: 5px;
+}
+
+.stat-card p {
+    color: #58111A;
+    font-weight: 700;
+}
+
+/* Seções e Grids */
+.about-section, .featured-section {
+    margin-bottom: 40px;
+}
+
+.about-section h2, .featured-section h2 {
+    color: #0f172a;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.info-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+}
+
+.info-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #0f172a;
+}
+
+.info-card p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Card de Carro em Destaque */
+.car-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.car-badge {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: #B31B1B;
+    color: #ffffff;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.car-plate {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.car-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+.car-price span {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 400;
+}
+
+.car-bottom {
+    width: 100%;
+    background-color: #B31B1B;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.car-bottom:hover {
+    background-color: #991b1b;
+}
+
+.btn-botao-index {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: block;
+    width: 100%;
+}
+
+/* ==========================================================================
+   4. FORMULÁRIOS DE CADASTRO E EDIÇÃO (.container-cadv, .container-cadc, .container)
+   ========================================================================== */
+.container-cadv, .container-cadc, .container {
+    max-width: 550px;
+    margin: 0 auto 40px auto;
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+}
+
+.container-cadv h2, .container-cadc h2, .container h2, .container-listarv h1 {
+    color: #0f172a;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 12px;
+}
+
+.form-group, .form-group-cadc {
+    margin-bottom: 20px;
+}
+
+.form-group label, .form-group-cadc label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1e293b;
+}
+
+/* Estilização universal e fluida dos Inputs e Selects */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select,
+.form-group-cadc input[type="text"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #0f172a;
+    background-color: #f8fafc;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group-cadc input:focus,
+.form-group select:focus {
+    border-color: #B31B1B;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(179, 27, 27, 0.12);
+}
+
+/* Botões do Cadastro de Veículo (btn-cadv / btn-secondary-cadv) */
+.btn-cadv {
+    width: 100%;
+    display: block;
+    padding: 12px;
+    background-color: #991b1b;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-cadv:hover {
+    background-color: #B31B1B;
+}
+
+.btn.btn-secondary-cadv, .btn-secondary-cadc, .btn-secondary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background-color: #64748b;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn.btn-secondary-cadv:hover, .btn-secondary-cadc:hover, .btn-secondary:hover {
+    background-color: #475569;
+}
+
+/* Botões do Cadastro de Cliente (btn-cadc) e Padrão (.btn) */
+.btn-cadc {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #991b1b;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #636363;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: background-color 0.2s ease;
+}
+/**/
+
+.btn-cadc:hover {
+    background-color: #B31B1B;
+}
+
+
+.btn:hover {
+    background-color: #494949;
+}
+/* Mensagens de Alerta */
+.alert {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.alert-sucesso, .alert-sucesso-cadc {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.alert-erro, .alert-erro-cadc {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+/* ==========================================================================
+   5. TABELA DE LISTAGEM DE VEÍCULOS (veiculos_listar.php)
+   ========================================================================== */
+.container-listarv {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+table {
+    max-width: 1000px;
+    margin: 20px auto;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+table thead tr {
+    background-color: #0f172a;
+}
+
+table th {
+    color: #f8fafc;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 16px 18px;
+    text-align: left;
+    border-bottom: 2px solid #1e293b;
+}
+
+table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.95rem;
+    color: #334155;
+    vertical-align: middle;
+}
+
+table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.btn-editar-listar {
+    display: inline-block;
+    padding: 8px 18px;
+    background-color: #991b1b;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-editar-listar:hover {
+    background-color: #B31B1B;
+}
+
+.sem-registros {
+    text-align: center;
+    color: #64748b;
+    font-style: italic;
+    padding: 25px;
+}
